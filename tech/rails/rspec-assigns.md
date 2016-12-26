@@ -1,7 +1,8 @@
 _12/26/2016_
 
-Rspec `assigns` offers easy access to the state of object at a point in the test without reloading the object value.
+Rspec `assigns` offers easy access to the state of an instance variable at a point in the test without reloading the variable model value.
 
+This code
 ```ruby
 it "changes the contact's attributes" do
   patch :update, id: @contact,
