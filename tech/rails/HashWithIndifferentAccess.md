@@ -30,3 +30,14 @@ h['bar'] #=> 2
 h['foo'] #=> 1
 h[:bar] #=> 2
 ```
+
+We can convert a normal hash to HashWithIndifferentAccess using `with_indifferent_access`
+```ruby
+h = {foo: 1, 'bar' => 2}.with_indifferent_access
+
+h[:foo] #=> 1
+h['bar'] #=> 2
+
+h['foo'] #=> 1
+h[:bar] #=> 2
+```
