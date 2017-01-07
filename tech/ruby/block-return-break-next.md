@@ -16,37 +16,45 @@ Ruby has three keywords that return from something:
 
 In lambdas, `return` behaves like `next`, for whatever reason.
 
-`next` inside a block returns from the block. `break` inside a block returns from the function that yielded to the block. For `each` this means that `break` exits the loop and `next` jumps to the next iteration of the loop (thus the names). You can return values with `next value` and `break value`.
-
 ```ruby
 def foo
-  f = Proc.new { return "return from foo from inside proc" }
+  f = Proc.new { return "inner proc" }
   f.call
-  return "return from foo"
+  return "foo"
 end
 
 def bar
-  b = Proc.new { "return from bar from inside proc" }
+  b = Proc.new { "inner proc" }
   b.call
-  return "return from bar"
+  return "bar"
 end
 
-puts foo #=> "return from foo from inside proc"
-puts bar #=> "return from bar"
+def foo2
+  b = lambda { return "inner lambda" }
+  b.call
+  return "foo2"
+end
+
+puts foo #=> "inner proc"
+puts bar #=> "bar"
+puts foo2 #=> "foo2"
 ```
 
-```ruby
-[1,2,3].map do |x|
-  next false unless x.even?
-  2*x
-end
-#=> [false, nil, false]
+`next` inside a block returns from the block. `break` inside a block returns from the function that yielded to the block. For `each` this means that `break` exits the loop and `next` jumps to the next iteration of the loop (thus the names). You can return values with `next value` and `break value`.
 
-[1,2,3].map do |x|
-  break false unless x.even?
-  2*x
+```ruby
+foo = [1, 2, 3].map do |x|
+  next false unless x.even?
+  true
 end
-#=> false
+
+bar = [1, 2, 3].map do |x|
+  break false unless x.even?
+  true
+end
+
+p foo #=> [false, true, false]
+p bar #=> false
 ```
 
 http://stackoverflow.com/questions/2518075/how-can-i-return-something-early-from-a-block
