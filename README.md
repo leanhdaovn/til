@@ -4,6 +4,7 @@
 
 - Ruby
   - [Method Arguments](tech/ruby/method-arguments.md)
+  - [Block `return`, `break`, `next`](tech/ruby/block-return-break-next.md)
 
 - Rails
   - [ActiveRecord vs ActiveModel vs ActiveResource](tech/rails/ActiveModel-ActiveRecord-ActiveResource.md)
