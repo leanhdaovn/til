@@ -1,6 +1,6 @@
 _08/01/2017_
 
-## Safe Navigation Operator: Ampersand Dot (&.)
+## Safe Navigation Operator: Ampersand Dot `&.`
 
 Introduced in Ruby 2.3, this operator helps us call methods on an object without worrying if it's `nil` or not.
 
