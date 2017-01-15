@@ -12,6 +12,9 @@
   - [Rspec `assigns`](tech/rails/rspec-assigns.md)
   - [HashWithIndifferentAccess](tech/rails/HashWithIndifferentAccess.md)
 
+- Misc
+  - [Bloom Filter](tech/misc/bloom-filter.md)
+
 ### Psychology
 
 - [Endowment Effect](psychology/endowment-effect.md)
